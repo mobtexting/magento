@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+{{License}}
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="MOBTEXTING_SMS::smsnotifications" title="MOBTEXTING SMS" module="MOBTEXTING_SMS" sortOrder="11" resource="MOBTEXTING_SMS::smsnotifications"/>
+        <add id="MOBTEXTING_SMS::smsnotifications_head" title="Settings" module="MOBTEXTING_SMS" sortOrder="40"
+             parent="MOBTEXTING_SMS::smsnotifications" resource="MOBTEXTING_SMS::smsnotifications"/>
+        <add id="MOBTEXTING_SMS::config" title="Configuration" module="MOBTEXTING_SMS" sortOrder="50"
+             action="adminhtml/system_config/edit/section/mobtexting_sms_configuration"
+             resource="MOBTEXTING_SMS::smsnotifications" parent="MOBTEXTING_SMS::smsnotifications_head" />
+    </menu>
+</config>

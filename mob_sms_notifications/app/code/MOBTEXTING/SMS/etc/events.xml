@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="checkout_onepage_controller_success_action">
+        <observer name="mobtexting_sms_observer_new_order" instance="MOBTEXTING\SMS\Observer\NewOrder"/>
+    </event>
+    <event name="sales_order_save_after">
+        <observer name="mobtexting_sms_observer_order_cancelled" instance="MOBTEXTING\SMS\Observer\OrderCancelled"/>
+        <observer name="mobtexting_sms_observer_order_hold" instance="MOBTEXTING\SMS\Observer\OrderHold"/>
+        <observer name="mobtexting_sms_observer_order_un_hold" instance="MOBTEXTING\SMS\Observer\OrderUnHold"/>
+       <!--   <observer name="mobtexting_sms_observer_order_payment_review" instance="MOBTEXTING\SMS\Observer\PaymentReview"/> -->
+    </event>
+    <event name="sales_order_invoice_pay">
+        <observer name="mobtexting_sms_observer_invoice_pay" instance="MOBTEXTING\SMS\Observer\InvoicePay"/>
+    </event>
+   
+    <event name="customer_save_after_data_object">
+        <observer name="mobtexting_sms_observer_register_success" instance="MOBTEXTING\SMS\Observer\Registration"/>
+    </event>
+
+    <event name="admin_system_config_changed_section_mobtexting_sms_configuration">
+          <observer name="mobtexting_sms_observer_config_save" instance="MOBTEXTING\SMS\Observer\Configsave"/>
+    </event>
+     <event name="sales_order_shipment_save_before">
+         <observer name="mobtexting_sms_observer_shipment_save" instance="MOBTEXTING\SMS\Observer\Shipment"/>
+     </event>
+    
+      <event name="controller_action_postdispatch_customer_account_forgotpasswordpost">
+        <observer name="mobtexting_sms_observer_forgot_password" instance="MOBTEXTING\SMS\Observer\ForgotPassword"/>
+     </event>
+
+      <event name="review_save_after">
+        <observer name="mobtexting_sms_observer_review_save" instance="MOBTEXTING\SMS\Observer\ReviewSave"/>
+     </event>
+       <event name="newsletter_subscriber_save_after">
+        <observer name="mobtexting_sms_observer_newsletter_subs" instance="MOBTEXTING\SMS\Observer\NewsletterSubs"/>
+     </event>
+
+</config>
