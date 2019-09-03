@@ -1,6 +1,6 @@
 ## MOBtexting Magento 2x SMS plugin
 
- To installation instructions follow the [documentation](https://portal.mobtexting.com/docs/magento).
+ To installation instructions follow the [documentation](https://portal.mobtexting.com/docs/tools/magento).
 
 ## Security
 
